@@ -4,6 +4,8 @@ import socket
 import re
 import sys
 import threading
+import os
+import shutil
 
 # UDP 转发地址 (本地您的 雷达上位机)
 UDP_IP = "127.0.0.1"
@@ -13,14 +15,24 @@ def start_adb_logcat():
     print("🚀 正在启动 手机 ADB 日志嗅探器 (免修改 Android 源码)...")
     print("请确保：\n 1. 手机已用 Type-C 线连接电脑\n 2. 手机开启了【USB 调试】\n 3. 手机屏幕上正在运行 Youhong (2208) 测试 App")
     
+    adb_path = shutil.which("adb")
+    if not adb_path:
+        local_app_data = os.environ.get("LOCALAPPDATA")
+        if local_app_data:
+            default_adb = os.path.join(local_app_data, "Android", "Sdk", "platform-tools", "adb.exe")
+            if os.path.exists(default_adb):
+                adb_path = default_adb
+    if not adb_path:
+        adb_path = "adb" # fallback
+        
     # 清理旧日志日志
-    subprocess.run(["adb", "logcat", "-c"], shell=True)
+    subprocess.run([adb_path, "logcat", "-c"], shell=True)
 
     sock = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
     
     # 启动 logcat，并只过滤我们需要的 Tag (比如 info 或者是心率相关的)
     # 因为我们在 MainActivity 看到：Log.e("info",map.toString());
-    process = subprocess.Popen(['adb', 'logcat', 'info:E', '*:S'], stdout=subprocess.PIPE, stderr=subprocess.PIPE, text=True, encoding='utf-8', errors='ignore')
+    process = subprocess.Popen([adb_path, 'logcat', 'info:E', '*:S'], stdout=subprocess.PIPE, stderr=subprocess.PIPE, text=True, encoding='utf-8', errors='ignore')
     
     print("\n✅ 嗅探器已就绪，正在静默监听手环数据...\n")
     
