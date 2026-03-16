@@ -1,0 +1,35 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@android:color/transparent"
+            android:text="PRI" />
+
+        <android.support.v7.widget.SwitchCompat
+            android:id="@+id/_switchCompat"
+            android:layout_marginStart="30dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center" />
+
+    </LinearLayout>
+    <TextView
+        android:id="@+id/data_info"
+        android:textColor="@android:color/black"
+        android:layout_width="match_parent"
+        android:layout_height="600dp"/>
+
+
+
+
+</LinearLayout>

@@ -1,0 +1,61 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+
+    <EditText
+        android:id="@+id/weathid"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:inputType="number"
+        android:gravity="left"
+        android:hint="Enter weathid 0-38 or 99"
+        android:maxLength="13" />
+
+    <EditText
+        android:id="@+id/ed_temperature_1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:inputType="number"
+        android:gravity="left"
+        android:hint="Enter current temperature"
+        android:maxLength="13" />
+    <EditText
+        android:id="@+id/ed_temperature_two"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="left"
+        android:inputType="number"
+        android:hint="Enter the current maximum temperature"
+        android:maxLength="13" />
+    <EditText
+        android:id="@+id/ed_temperature_there"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="left"
+        android:inputType="number"
+        android:hint="Enter the current minimum temperature"
+        android:maxLength="13"
+        tools:ignore="HardcodedText" />
+
+
+    <EditText
+        android:id="@+id/cityname"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="left"
+        android:hint="Please enter city name"
+        android:maxLength="13" />
+
+    <Button
+        android:id="@+id/Set"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Set Weather" />
+
+
+
+
+</LinearLayout>

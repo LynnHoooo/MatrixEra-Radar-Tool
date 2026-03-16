@@ -1,0 +1,216 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+    <android.support.v4.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/rl_title"
+        android:fillViewport="true"
+        android:orientation="vertical"
+        android:scrollbars="none">
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+       <RelativeLayout
+           android:layout_width="match_parent"
+           android:layout_height="wrap_content">
+           <android.support.v7.widget.SwitchCompat
+               android:id="@+id/myswitch"
+               android:layout_marginTop="15dp"
+               android:layout_gravity="center"
+               android:layout_centerInParent="true"
+               android:layout_width="wrap_content"
+               android:layout_height="wrap_content"/>
+
+           <Button
+               android:id="@+id/csv"
+               android:layout_marginTop="20dp"
+               android:text="csv"
+               android:layout_centerVertical="true"
+               android:layout_width="wrap_content"
+               android:layout_height="wrap_content"/>
+
+           <Button
+               android:id="@+id/DATA"
+               android:layout_marginTop="20dp"
+               android:text="原始数据"
+               android:layout_alignParentEnd="true"
+               android:layout_centerVertical="true"
+               android:layout_width="wrap_content"
+               android:layout_height="wrap_content"/>
+       </RelativeLayout>
+            <TextView
+                android:id="@+id/heart"
+                android:text="0"
+                android:gravity="center"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"/>
+
+            <TextView
+                android:id="@+id/hearter"
+                android:text="0"
+                android:gravity="center"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"/>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+                <android.support.v7.widget.SwitchCompat
+                    android:id="@+id/fliter"
+                    android:layout_marginStart="20dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"/>
+                <TextView
+                    android:text="filter"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"/>
+            </LinearLayout>
+            <RelativeLayout
+                android:layout_marginTop="15dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+                <TextView
+                    android:text="PPG 1"
+                    android:background="@android:color/holo_green_light"
+                    android:layout_width="match_parent"
+                    android:gravity="start|center"
+                    android:singleLine="true"
+                    android:textColor="@android:color/white"
+                    android:layout_height="wrap_content" />
+                <TextView
+                    android:id="@+id/ppg_tt0"
+                    android:textColor="@android:color/white"
+                    android:text="00"
+                    android:layout_alignParentEnd="true"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"/>
+            </RelativeLayout>
+
+            <lecho.lib.hellocharts.view.LineChartView
+                android:paddingTop="15dp"
+                android:layout_marginTop="5dp"
+                android:id="@+id/lineChartView_ecg"
+                android:layout_width="wrap_content"
+                android:layout_height="80dp" />
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+                <TextView
+                    android:text="PPG 2"
+                    android:layout_width="match_parent"
+                    android:singleLine="true"
+                    android:background="@android:color/holo_green_dark"
+                    android:gravity="start|center"
+                    android:textColor="@android:color/white"
+                    android:layout_height="wrap_content" />
+                <TextView
+                    android:id="@+id/ppg_tt1"
+                    android:textColor="@android:color/white"
+                    android:text="00"
+                    android:layout_alignParentEnd="true"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"/>
+            </RelativeLayout>
+
+
+            <lecho.lib.hellocharts.view.LineChartView
+                android:paddingTop="15dp"
+                android:layout_marginTop="5dp"
+                android:id="@+id/lineChartView_ecg2"
+                android:layout_width="wrap_content"
+                android:layout_height="80dp" />
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+                <TextView
+                    android:text="PPG 4"
+                    android:background="@android:color/holo_red_light"
+                    android:layout_width="match_parent"
+                    android:gravity="start|center"
+                    android:singleLine="true"
+                    android:textColor="@android:color/white"
+                    android:layout_height="wrap_content" />
+                <TextView
+                    android:id="@+id/ppg_tt2"
+                    android:textColor="@android:color/white"
+                    android:text="00"
+                    android:layout_alignParentEnd="true"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"/>
+            </RelativeLayout>
+            <lecho.lib.hellocharts.view.LineChartView
+                android:paddingTop="15dp"
+                android:layout_marginTop="5dp"
+                android:id="@+id/lineChartView_ecg3"
+                android:layout_width="wrap_content"
+                android:layout_height="80dp" />
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+                <TextView
+                    android:text="PPG 6"
+                    android:background="@android:color/holo_green_dark"
+                    android:layout_width="match_parent"
+                    android:gravity="start|center"
+                    android:singleLine="true"
+                    android:textColor="@android:color/white"
+                    android:layout_height="wrap_content" />
+                <TextView
+                    android:id="@+id/ppg_tt3"
+                    android:textColor="@android:color/white"
+                    android:text="00"
+                    android:layout_alignParentEnd="true"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"/>
+            </RelativeLayout>
+            <lecho.lib.hellocharts.view.LineChartView
+                android:paddingTop="15dp"
+                android:layout_marginTop="5dp"
+                android:id="@+id/lineChartView_ecg4"
+                android:layout_width="wrap_content"
+                android:layout_height="80dp" />
+
+
+            <LinearLayout
+                android:layout_marginTop="20dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+                <TextView
+                    android:text="X"
+                    android:background="@android:color/black"
+                    android:layout_width="40dp"
+                    android:gravity="center"
+                    android:textColor="@android:color/white"
+                    android:layout_height="wrap_content" />
+                <TextView
+                    android:text="Y"
+                    android:background="@android:color/holo_blue_light"
+                    android:layout_width="40dp"
+                    android:gravity="center"
+                    android:layout_marginStart="5dp"
+                    android:textColor="@android:color/white"
+                    android:layout_height="wrap_content" />
+                <TextView
+                    android:text="Z"
+                    android:background="@android:color/holo_orange_dark"
+                    android:layout_width="40dp"
+                    android:gravity="center"
+                    android:layout_marginStart="5dp"
+                    android:textColor="@android:color/white"
+                    android:layout_height="wrap_content" />
+            </LinearLayout>
+
+            <lecho.lib.hellocharts.view.LineChartView
+                android:paddingTop="15dp"
+                android:layout_marginTop="5dp"
+                android:id="@+id/lineChartView_ecger"
+                android:layout_width="wrap_content"
+                android:layout_height="120dp" />
+        </LinearLayout>
+
+    </android.support.v4.widget.NestedScrollView>
+
+</LinearLayout>

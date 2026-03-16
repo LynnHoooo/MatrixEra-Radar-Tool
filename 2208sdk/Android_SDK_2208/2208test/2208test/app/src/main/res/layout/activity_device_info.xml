@@ -1,0 +1,308 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.v4.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <LinearLayout
+        android:layout_marginTop="30dp"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:text="距离单位\nDistance unit" />
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:text="时间模式\nTime mode" />
+
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:divider="@color/colorAccent"
+            android:orientation="horizontal"
+            android:showDividers="middle">
+            <RadioGroup
+                android:id="@+id/radioGroup3"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_margin="8dp"
+                android:layout_weight="1"
+                android:checkedButton="@+id/radio_km"
+                android:orientation="horizontal">
+                <RadioButton
+                    android:id="@+id/radio_km"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:gravity="center"
+
+                    android:text="km" />
+
+                <RadioButton
+                    android:id="@+id/radio_mile"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:text="mile" />
+            </RadioGroup>
+            <RadioGroup
+                android:id="@+id/radioGroup1"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_margin="8dp"
+                android:layout_weight="1"
+                android:checkedButton="@+id/radio_12h"
+                android:orientation="horizontal">
+
+                <RadioButton
+                    android:id="@+id/radio_12h"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:text="12H" />
+
+                <RadioButton
+                    android:id="@+id/radio_24h"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:text="24H" />
+            </RadioGroup>
+
+
+        </LinearLayout>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:text="TempUnit"/>
+
+        <RadioGroup
+            android:id="@+id/radioGroup_tempUnit"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_margin="8dp"
+            android:orientation="horizontal">
+
+            <RadioButton
+                android:id="@+id/radio_temp_c"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+
+                android:text="C" />
+
+            <RadioButton
+                android:id="@+id/radio_temp_f"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:text="F" />
+        </RadioGroup>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+        <RelativeLayout
+            android:layout_weight="1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            >
+
+            <Button
+                android:id="@+id/tslp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@android:color/transparent"
+                android:text="Raise your handto check  the enable  sign" />
+
+            <android.support.v7.widget.SwitchCompat
+                android:layout_toEndOf="@+id/tslp"
+                android:layout_centerVertical="true"
+                android:id="@+id/SwitchCompat_hand"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                />
+        </RelativeLayout>
+
+
+
+        </LinearLayout>
+
+
+        <LinearLayout
+            android:layout_weight="1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@android:color/transparent"
+                android:text="Fahrenheit or centigrade" />
+
+            <android.support.v7.widget.SwitchCompat
+                android:id="@+id/left_or_light"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center" />
+        </LinearLayout>
+
+
+
+        <RelativeLayout
+            android:layout_weight="1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            >
+
+            <Button
+                android:id="@+id/Night_modebb"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@android:color/transparent"
+                android:text="Night mode" />
+
+            <android.support.v7.widget.SwitchCompat
+                android:layout_toEndOf="@+id/Night_modebb"
+                android:layout_centerVertical="true"
+                android:id="@+id/Night_mode"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                />
+        </RelativeLayout>
+        <RelativeLayout
+            android:layout_weight="1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            >
+
+            <Button
+                android:id="@+id/Social_distance_switchb"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@android:color/transparent"
+                android:text="Social distance switch" />
+
+            <android.support.v7.widget.SwitchCompat
+                android:layout_toEndOf="@+id/Social_distance_switchb"
+                android:layout_centerVertical="true"
+                android:id="@+id/Social_distance_switch"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                />
+        </RelativeLayout>
+        <RelativeLayout
+            android:layout_weight="1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            >
+
+            <Button
+                android:id="@+id/Chinese_English_switchb"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@android:color/transparent"
+                android:text="Chinese English switch" />
+
+            <android.support.v7.widget.SwitchCompat
+                android:layout_toEndOf="@+id/Chinese_English_switchb"
+                android:layout_centerVertical="true"
+                android:id="@+id/Chinese_English_switch"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                />
+        </RelativeLayout>
+        <android.support.v7.widget.AppCompatEditText
+            android:id="@+id/BASE_heart"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="BASE heart >40"
+            android:inputType="number"/>
+
+        <android.support.v7.widget.AppCompatEditText
+            android:id="@+id/AppCompatEditText_baseHr"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="dcreenBrightness 0-5"
+            android:maxLength="2"
+            android:inputType="number"/>
+
+        <android.support.v7.widget.AppCompatEditText
+            android:id="@+id/Dial_switch"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Dial switch 0-10"
+            android:maxLength="2"
+            android:inputType="number"/>
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <Button
+                android:id="@+id/button_deviceinfo_set"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Set" />
+
+            <Button
+                android:id="@+id/button_deviceinfo_get"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Get" />
+        </LinearLayout>
+        <android.support.v7.widget.AppCompatEditText
+            android:id="@+id/Dialinterface"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint= "0-5"
+            android:visibility="gone"
+            android:inputType="number"/>
+        <Button
+            android:id="@+id/setDialinterface"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:visibility="gone"
+            android:text="setDialinterface" />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:text="Device Name"
+            android:visibility="gone"/>
+
+
+
+    </LinearLayout>
+</android.support.v4.widget.NestedScrollView>

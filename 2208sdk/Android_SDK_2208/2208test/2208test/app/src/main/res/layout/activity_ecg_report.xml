@@ -1,0 +1,237 @@
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/bg_ecg_history"
+    >
+
+    <ImageView
+        android:id="@+id/iv_ecgReport_share"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="12dp"
+        android:layout_marginEnd="8dp"
+        android:scaleType="fitXY"
+        android:src="@drawable/share_2025b"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+
+    <Button
+        android:id="@+id/bt_ecgReport_back"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@android:color/transparent"
+        android:text="Back"
+        android:textColor="@android:color/black"
+        app:layout_constraintBottom_toBottomOf="parent"
+        tools:ignore="MissingConstraints" />
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintRight_toRightOf="parent">
+
+        <Button
+            android:id="@+id/bt_ecgReport_name"
+            android:layout_width="65dp"
+            android:layout_height="wrap_content"
+            android:background="@android:color/transparent"
+            android:gravity="center"
+            android:singleLine="true"
+            android:text="NAME: Linda"
+            android:textSize="10sp" />
+
+        <Button
+            android:id="@+id/bt_ecgReport_gender"
+            android:layout_width="85dp"
+            android:layout_height="wrap_content"
+            android:background="@android:color/transparent"
+            android:text="GENDER: Female"
+            android:textSize="10sp" />
+
+        <Button
+            android:id="@+id/bt_ecgReport_height"
+            android:layout_width="85dp"
+            android:layout_height="wrap_content"
+            android:background="@android:color/transparent"
+            android:text="HEIGHT: 162cm"
+            android:textSize="10sp" />
+
+        <Button
+            android:id="@+id/bt_ecgReport_weight"
+            android:layout_width="80dp"
+            android:layout_height="wrap_content"
+            android:background="@android:color/transparent"
+            android:text="WEIGHT: 40kg"
+            android:textSize="10sp" />
+
+        <Button
+            android:id="@+id/bt_ecgReport_age"
+            android:layout_width="60dp"
+            android:layout_height="wrap_content"
+            android:background="@android:color/transparent"
+            android:text="AGE: 26"
+            android:textSize="10sp" />
+
+        <Button
+            android:id="@+id/bt_ecgReport_date"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@android:color/transparent"
+            android:text="04/01,2019 17:09"
+            android:textSize="10sp" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/ll_ecgReport_time"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
+        android:orientation="vertical"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <Button
+            android:id="@+id/bt_ecgReport_PR"
+            android:layout_width="wrap_content"
+            android:layout_height="25dp"
+            android:background="@android:color/transparent"
+            android:text="PR:Overtime(120-200ms)" />
+
+        <Button
+            android:id="@+id/bt_ecgReport_QT"
+            android:layout_width="wrap_content"
+            android:layout_height="25dp"
+            android:background="@android:color/transparent"
+            android:text="QT:Overtime(120-200ms)" />
+
+        <Button
+            android:id="@+id/bt_ecgReport_QTC"
+            android:layout_width="wrap_content"
+            android:layout_height="25dp"
+            android:background="@android:color/transparent"
+            android:text="QTc:Overtime(120-200ms)" />
+
+        <Button
+            android:id="@+id/bt_ecgReport_TRS"
+            android:layout_width="wrap_content"
+            android:layout_height="25dp"
+            android:background="@android:color/transparent"
+            android:text="TRS:Overtime(120-200ms)" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/ll_ecgReport_data"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="16dp"
+        android:orientation="vertical"
+        app:layout_constraintLeft_toRightOf="@+id/ll_ecgReport_time"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <Button
+            android:id="@+id/bt_ecgReport_HR"
+            android:layout_width="wrap_content"
+            android:layout_height="25dp"
+            android:background="@android:color/transparent"
+            android:gravity="center_vertical|left"
+            android:text="HR: 0bpm" />
+
+        <Button
+            android:id="@+id/bt_ecgReport_HRV"
+            android:layout_width="wrap_content"
+            android:layout_height="25dp"
+            android:background="@android:color/transparent"
+            android:gravity="center_vertical|left"
+            android:text="HRV: 0" />
+
+
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/bt_ecgReport_ABNORMALITIES"
+        android:layout_width="wrap_content"
+
+        android:layout_height="25dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
+        android:background="@android:color/transparent"
+        android:gravity="center_vertical|left"
+        android:text="ABNORMALITIES:"
+        app:layout_constraintLeft_toRightOf="@+id/ll_ecgReport_data"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:background="@android:color/transparent"
+        android:text="Source: Lead Ⅰ"
+        app:layout_constraintLeft_toRightOf="@+id/ll_ecgReport_data"
+        app:layout_constraintTop_toBottomOf="@+id/bt_ecgReport_ABNORMALITIES" />
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="16dp"
+        android:orientation="vertical"
+        app:layout_constraintLeft_toRightOf="@+id/bt_ecgReport_ABNORMALITIES"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="25dp"
+            android:background="@android:color/transparent"
+            android:gravity="center_vertical|left"
+            android:text="None" />
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="25dp"
+            android:background="@android:color/transparent"
+            android:gravity="center_vertical|left"
+            android:text="Tachycardia"
+            android:visibility="invisible" />
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="25dp"
+            android:background="@android:color/transparent"
+            android:gravity="center_vertical|left"
+            android:text="Bradycardia"
+            android:visibility="invisible" />
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="25dp"
+            android:background="@android:color/transparent"
+            android:gravity="center_vertical|left"
+            android:text="AF"
+            android:visibility="invisible" />
+    </LinearLayout>
+
+    <lecho.lib.hellocharts.view.LineChartView
+        android:id="@+id/LineChartView_ecgReport"
+        android:layout_width="wrap_content"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toTopOf="@+id/bt_ecgReport_back"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/ll_ecgReport_time" />
+
+    <Button
+        android:id="@+id/bt_reviewPDF"
+        android:layout_width="60dp"
+        android:layout_height="wrap_content"
+        android:background="@android:color/transparent"
+        android:text="Preview"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/iv_ecgReport_share" />
+</android.support.constraint.ConstraintLayout>

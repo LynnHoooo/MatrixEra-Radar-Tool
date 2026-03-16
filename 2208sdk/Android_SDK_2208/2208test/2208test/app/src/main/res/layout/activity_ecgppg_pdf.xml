@@ -1,0 +1,58 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="horizontal">
+
+    <RelativeLayout
+        android:id="@+id/Mian_Bar"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:background="#00A7AE">
+
+        <RelativeLayout
+            android:id="@+id/back_eegrt"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_centerVertical="true"
+           >
+
+            <ImageView
+                android:layout_width="8.5dp"
+                android:layout_height="14.5dp"
+                android:layout_alignParentStart="true"
+                android:layout_centerInParent="true"
+                android:layout_marginStart="20dp"
+                android:layout_marginEnd="20dp"
+                android:src="@drawable/back" />
+        </RelativeLayout>
+
+
+        <RelativeLayout
+            android:id="@+id/report"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_alignParentEnd="true"
+            android:layout_centerVertical="true"
+            >
+
+            <ImageView
+                android:layout_width="16dp"
+                android:layout_height="16dp"
+                android:layout_centerVertical="true"
+                android:layout_marginStart="20dp"
+                android:layout_marginEnd="20dp"
+                android:src="@drawable/share_report" />
+        </RelativeLayout>
+
+
+    </RelativeLayout>
+
+    <WebView
+        android:id="@+id/history_webview"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/Mian_Bar"
+        />
+
+
+</RelativeLayout>

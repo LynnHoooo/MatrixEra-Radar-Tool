@@ -1,0 +1,4 @@
+This file describes the necessary license key to manipulate the ECG SDK.
+The license key should *NOT* be redistributed or re-sale in any format.
+The use of the license can be reference on the sample application or the usage document.
+license key="NeuroSky_Release_To_GeneralFreeLicense_Use_Only_Dec  1 2016"

@@ -1,0 +1,31 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:orientation="vertical"
+    android:layout_height="match_parent"
+    tools:context="com.jstyle.test2208.activity.DetailDataActivity">
+
+
+  <TextView
+      android:text="获得睡眠详细数据\nGet sleep details"
+      android:layout_gravity="center_horizontal"
+      android:layout_marginBottom="20dp"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"/>
+
+    <Button
+        android:layout_width="match_parent"
+        android:text="Read"
+        android:id="@+id/bt_readData"
+        android:layout_height="wrap_content" />
+    <Button
+        android:layout_width="match_parent"
+        android:text="Delete"
+        android:id="@+id/bt_DeleteData"
+        android:layout_height="wrap_content" />
+
+    <android.support.v7.widget.RecyclerView
+        android:layout_width="match_parent"
+        android:id="@+id/RecyclerView_detailData"
+        android:layout_height="wrap_content"/>
+</LinearLayout>

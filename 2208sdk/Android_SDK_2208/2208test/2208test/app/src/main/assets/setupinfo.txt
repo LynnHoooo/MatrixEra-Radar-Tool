@@ -1,0 +1,12 @@
+// this file contain if the algorithm(s) can be activated on the UI
+// sm = smooth, af = afib, hv = hrv, st/stv2 = stress, hr = heart rate, md = mood, rr = respiratory rate, ha = heart age, td = hrvtd, fd = hrvfd
+sm
+//af
+hv
+st
+hr
+md
+rr
+ha
+td
+fd

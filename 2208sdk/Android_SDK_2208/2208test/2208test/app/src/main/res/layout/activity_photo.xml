@@ -1,0 +1,28 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context="com.jstyle.test2208.activity.TotalDataActivity">
+
+
+    <Button
+        android:layout_width="match_parent"
+        android:text="进入拍照模式\nenter photo mode"
+        android:id="@+id/EnterPhotoMode"
+        android:layout_height="wrap_content" />
+
+    <Button
+        android:layout_width="match_parent"
+        android:text="退出拍照模式\nExit photo mode"
+        android:id="@+id/Exitphotomode"
+        android:layout_height="wrap_content" />
+    <TextView
+        android:id="@+id/info"
+        android:textColor="@android:color/black"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"/>
+
+
+
+</LinearLayout>

@@ -4,6 +4,8 @@ import serial
 import serial.tools.list_ports
 import csv
 import datetime
+import socket
+import json
 from PyQt6.QtWidgets import (QApplication, QMainWindow, QWidget, QVBoxLayout, 
                              QHBoxLayout, QLabel, QPushButton, QComboBox, 
                              QTextEdit, QFrame, QGridLayout)
@@ -144,13 +146,49 @@ class SerialThread(QThread):
                 self.raw_log.emit(f"Write Error: {str(e)}")
         return False
 
+# --- UDP 接收线程 (配合手机 App 数据中转) ---
+class UdpServerThread(QThread):
+    data_received = pyqtSignal(dict)
+    raw_log = pyqtSignal(str)
+    
+    def __init__(self, port=9999):
+        super().__init__()
+        self.port = port
+        self.running = True
+        self.sock = None
+        
+    def run(self):
+        try:
+            self.sock = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
+            self.sock.bind(('0.0.0.0', self.port))
+            self.sock.settimeout(0.5)
+            self.raw_log.emit(f"UDP服务已开启，请将手机 App 的转发地址填为本机的 9999 端口")
+            while self.running:
+                try:
+                    data, addr = self.sock.recvfrom(1024)
+                    text = data.decode('utf-8')
+                    # 例如手机发来的格式: {"hr": 75, "spo2": 98}
+                    parsed = json.loads(text)
+                    self.data_received.emit(parsed)
+                except socket.timeout:
+                    pass
+                except Exception as e:
+                    self.raw_log.emit(f"UDP 解析异常: {str(e)}")
+            self.sock.close()
+        except Exception as e:
+            self.raw_log.emit(f"UDP 绑定错误 (端口可能被占用): {str(e)}")
+            
+    def stop(self):
+        self.running = False
+
 # --- UI 界面 ---
 class RadarTesterApp(QMainWindow):
     def __init__(self):
         super().__init__()
-        self.setWindowTitle("R60ABD1 雷达专业测试工具 V1.0")
+        self.setWindowTitle("R60ABD1 矩阵纪元多模融合测试工具 V1.0")
         self.resize(1000, 700)
         self.serial_thread = None
+        self.udp_thread = None
         self.is_recording = False
         self.csv_file = None
         self.csv_writer = None
@@ -233,6 +271,30 @@ class RadarTesterApp(QMainWindow):
         record_vbox.addWidget(self.btn_stop_record)
         left_panel.addWidget(record_group)
 
+        # --- 手表 SDK 接入组 (UDP中转) ---
+        watch_group = QFrame()
+        watch_group.setObjectName("Card")
+        watch_vbox = QVBoxLayout(watch_group)
+        watch_vbox.addWidget(QLabel("<b>手表 SDK 接入 (UDP 中继)</b>"))
+        
+        # 获取本机IP以给用户提示
+        try:
+            s_temp = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
+            s_temp.connect(("8.8.8.8", 80))
+            local_ip = s_temp.getsockname()[0]
+            s_temp.close()
+        except:
+            local_ip = "127.0.0.1"
+
+        self.lbl_udp_tips = QLabel(f"本机 IP: <font color='#00E5FF'>{local_ip}</font> | 端口: <b>9999</b>")
+        self.lbl_udp_tips.setTextFormat(Qt.TextFormat.RichText)
+        watch_vbox.addWidget(self.lbl_udp_tips)
+        
+        self.btn_udp = QPushButton("开启监听")
+        self.btn_udp.clicked.connect(self.toggle_udp)
+        watch_vbox.addWidget(self.btn_udp)
+        left_panel.addWidget(watch_group)
+
         left_panel.addStretch()
         main_layout.addLayout(left_panel, 1)
 
@@ -246,11 +308,15 @@ class RadarTesterApp(QMainWindow):
         self.card_hr = self.create_data_card("心率 (BPM)", "--", "#00E5FF")
         self.card_br = self.create_data_card("呼吸 (次/分)", "--", "#00E676")
         self.card_dist = self.create_data_card("距离 (cm)", "--", "#FFD740")
+        self.card_watch_hr = self.create_data_card("手环心率 (BPM)", "--", "#FF4081")
+        self.card_watch_spo2 = self.create_data_card("手环血氧 (%)", "--", "#7C4DFF")
         
         display_layout.addWidget(self.card_presence, 0, 0)
         display_layout.addWidget(self.card_hr, 0, 1)
         display_layout.addWidget(self.card_br, 1, 0)
         display_layout.addWidget(self.card_dist, 1, 1)
+        display_layout.addWidget(self.card_watch_hr, 2, 0)
+        display_layout.addWidget(self.card_watch_spo2, 2, 1)
         
         right_panel.addLayout(display_layout)
 
@@ -317,7 +383,38 @@ class RadarTesterApp(QMainWindow):
         if self.serial_thread and self.serial_thread.isRunning():
             self.serial_thread.running = False
             self.serial_thread.wait()
+        if self.udp_thread and self.udp_thread.isRunning():
+            self.udp_thread.stop()
+            self.udp_thread.wait()
         event.accept()
+
+    def toggle_udp(self):
+        if self.udp_thread and self.udp_thread.isRunning():
+            self.udp_thread.stop()
+            self.udp_thread.wait()
+            self.udp_thread = None
+            self.btn_udp.setText("开启监听")
+            self.log_output.append("<font color='gray'>已关闭 UDP 监听</font>")
+        else:
+            self.udp_thread = UdpServerThread(9999)
+            self.udp_thread.data_received.connect(self.update_watch_data)
+            self.udp_thread.raw_log.connect(self.append_log)
+            self.udp_thread.start()
+            self.btn_udp.setText("关闭监听")
+
+    def update_watch_data(self, data):
+        # 兼容手机传来的 JSON 数据并同步更新卡片和存档
+        hr = data.get("hr", "")
+        spo2 = data.get("spo2", "")
+        if hr: self.card_watch_hr.val_label.setText(str(hr))
+        if spo2: self.card_watch_spo2.val_label.setText(str(spo2))
+        
+        self.log_output.append(f"<font color='#FF4081'>[Starmax] 收取数据: hr={hr}, spo2={spo2}</font>")
+        
+        if self.is_recording and self.csv_writer:
+            now_str = datetime.datetime.now().strftime('%H:%M:%S.%f')[:-3]
+            self.csv_writer.writerow([now_str, "Starmax UDP", "-", "-", f"心率:{hr} 血氧:{spo2}", json.dumps(data)])
+            self.csv_file.flush()
 
     def refresh_ports(self):
         self.port_combo.clear()

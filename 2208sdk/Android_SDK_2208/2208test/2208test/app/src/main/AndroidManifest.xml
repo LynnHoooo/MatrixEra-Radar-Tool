@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    package="com.jstyle.test2208">
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"
+        tools:ignore="ScopedStorage" />
+    <uses-permission android:name="android.permission.MANAGE_EXTERNAL_STORAGE"
+        tools:ignore="ScopedStorage" />
+    <!--BLUETOOTH-->
+    <uses-permission android:name="android.permission.BLUETOOTH_CONNECT" />
+    <uses-permission android:name="android.permission.BLUETOOTH" />
+    <uses-permission android:name="android.permission.BLUETOOTH_ADMIN" />
+    <uses-permission android:name="android.permission.BLUETOOTH_SCAN" />
+
+
+
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.SYSTEM_OVERLAY_WINDOW" />
+    <uses-permission android:name="android.permission.SYSTEM_ALERT_WINDOW" />
+    <uses-permission android:name="android.permission.VIBRATE" />
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+    <uses-permission android:name="android.permission.CAMERA" />
+    <uses-permission android:name="android.permission.ACCESS_LOCATION_EXTRA_COMMANDS" />
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+    <uses-permission android:name="android.permission.FOREGROUND_SERVICE" />
+    <uses-permission android:name="android.permission.BODY_SENSORS" />
+
+    <application
+        android:name="com.jstyle.test2208.Myapp"
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:networkSecurityConfig="@xml/network_security_config"
+        android:persistent="true"
+        android:preserveLegacyExternalStorage="true"
+        android:requestLegacyExternalStorage="true"
+        android:theme="@style/AppTheme"
+        tools:ignore="AllowBackup,GoogleAppIndexingWarning">
+        <activity
+            android:name="com.jstyle.test2208.activity.DeviceScanActivity"
+            android:screenOrientation="portrait">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity android:name="com.jstyle.test2208.activity.MainActivity" />
+
+        <activity android:name="com.jstyle.test2208.activity.TimeActivity" />
+        <activity android:name="com.jstyle.test2208.activity.BasicActivity" />
+        <activity android:name="com.jstyle.test2208.activity.DeviceInfoActivity" />
+        <activity android:name="com.jstyle.test2208.activity.ExfactoryActivity" />
+        <activity android:name="com.jstyle.test2208.activity.BatteryActivity" />
+        <activity android:name="com.jstyle.test2208.activity.MacActivity" />
+        <activity android:name="com.jstyle.test2208.activity.VersionActivity" />
+        <activity android:name="com.jstyle.test2208.activity.MCUActivity" />
+        <activity android:name="com.jstyle.test2208.activity.MotorVibrationActivity" />
+        <activity android:name="com.jstyle.test2208.activity.RealTimeStepCountingActivity" />
+        <activity android:name="com.jstyle.test2208.activity.SetGoalActivity" />
+        <activity android:name="com.jstyle.test2208.activity.AutoModeSetActivity" />
+        <activity android:name="com.jstyle.test2208.activity.AlarmListActivity" />
+        <activity android:name="com.jstyle.test2208.activity.NotifyActivity" />
+        <activity android:name="com.jstyle.test2208.activity.ActivityAlarmSetActivity" />
+        <activity android:name="com.jstyle.test2208.activity.TotalDataActivity" />
+        <activity android:name="com.jstyle.test2208.activity.DetailDataActivity" />
+        <activity android:name="com.jstyle.test2208.activity.DetailSleepActivity" />
+        <activity android:name="com.jstyle.test2208.activity.HeartRateInfoActivity" />
+        <activity android:name="com.jstyle.test2208.activity.HeartRateStaticInfoActivity" />
+        <activity android:name="com.jstyle.test2208.activity.HrvDataReadActivity" />
+        <activity android:name="com.jstyle.test2208.activity.ExerciseHistoryDataActivity" />
+        <activity android:name="com.jstyle.test2208.activity.ActivityModeActivity" />
+        <activity android:name="com.jstyle.test2208.activity.WeatherActivity" />
+        <activity android:name="com.jstyle.test2208.activity.PhotoActivity" />
+        <activity android:name="com.jstyle.test2208.activity.ClearDataActivity" />
+        <activity android:name="com.jstyle.test2208.activity.Manually_test_blood_oxygen_dataActivity" />
+        <activity android:name="com.jstyle.test2208.activity.Automatically_test_blood_oxygen_dataActivity" />
+        <activity android:name="com.jstyle.test2208.activity.TemperatureHistoryActivity" />
+        <activity android:name="com.jstyle.test2208.activity.AutoTemperatureHistoryActivity" />
+        <activity android:name="com.jstyle.test2208.activity.EcgActivity" />
+        <activity android:name="com.jstyle.test2208.activity.EcghistoryActivity" android:screenOrientation="landscape" android:theme="@style/AppThemeer"/>
+        <activity android:name="com.jstyle.test2208.activity.MeasurementActivity" />
+        <activity android:name="com.jstyle.test2208.activity.SocialDistanceActivity" />
+        <activity android:name="com.jstyle.test2208.activity.QRActivity" />
+        <activity android:name="com.jstyle.test2208.activity.BloodsugarActivity" />
+
+
+
+        <activity android:name="com.jstyle.test2208.activity.CsvActivity" />
+        <activity android:name="com.jstyle.test2208.activity.ActivityLanguageSwitching" />
+        <activity android:name="com.jstyle.test2208.activity.OtherAlarmActivity" />
+        <activity android:name="com.jstyle.test2208.activity.ActivitySetActivity" />
+        <activity android:name="com.jstyle.test2208.activity.StepTestActivity" />
+        <activity android:name="com.jstyle.test2208.activity.AlarmSetActivity" />
+        <activity android:name="com.jstyle.test2208.activity.PDFActivity" android:screenOrientation="landscape" android:theme="@style/AppThemeer"/>
+        <activity android:name="com.jstyle.test2208.activity.MusicActivity" />
+        <activity android:name="com.jstyle.test2208.activity.ClockDialActivity" />
+        <activity android:name="com.jstyle.test2208.activity.SportModeActivity" />
+      <!--  <activity android:name="com.jstyle.test2025.activity.WorkOutReminderActivity" />-->
+        <activity android:name="com.jstyle.test2208.activity.GpsActivity" />
+        <activity android:name="com.jstyle.test2208.activity.EcgPPgStatusActivity" />
+        <activity android:name="com.jstyle.test2208.activity.EcgDataActivity" />
+        <activity android:name="com.jstyle.test2208.activity.Spo2SetActivity" />
+        <activity android:name="com.jstyle.test2208.activity.PRIActivity" />
+
+        <provider
+            android:name="android.support.v4.content.FileProvider"
+            android:authorities="${applicationId}.provider"
+            android:exported="false"
+            android:grantUriPermissions="true">
+            <meta-data
+                android:name="android.support.FILE_PROVIDER_PATHS"
+                android:resource="@xml/filepaths" />
+        </provider>
+
+        <service android:name="com.jstyle.test2208.ble.BleService" />
+    </application>
+
+
+</manifest>

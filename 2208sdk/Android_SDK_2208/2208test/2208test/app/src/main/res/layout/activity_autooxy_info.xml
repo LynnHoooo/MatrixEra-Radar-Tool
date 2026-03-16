@@ -1,0 +1,24 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:orientation="vertical"
+    android:layout_height="match_parent"
+    tools:context="com.jstyle.test1963.activity.DetailDataActivity">
+
+
+    <Button
+        android:layout_width="match_parent"
+        android:text="Read GetAutomaticSpo2Monitoring"
+        android:id="@+id/GetAutomaticSpo2Monitoring"
+        android:layout_height="wrap_content" />
+    <Button
+        android:layout_width="match_parent"
+        android:text="Delete GetAutomaticSpo2Monitoring"
+        android:id="@+id/bt_DeleteDataGetAutomaticSpo2Monitoring"
+        android:layout_height="wrap_content" />
+
+    <android.support.v7.widget.RecyclerView
+        android:layout_width="match_parent"
+        android:id="@+id/RecyclerView_heartData"
+        android:layout_height="wrap_content"/>
+</LinearLayout>

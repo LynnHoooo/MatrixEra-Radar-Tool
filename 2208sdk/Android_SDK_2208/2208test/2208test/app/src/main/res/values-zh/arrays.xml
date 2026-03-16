@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="item_options">
+        <item>设置/获取设备时间</item>
+        <item>基础信息</item>
+        <item>设备信息</item>
+        <item>恢复出厂设置</item>
+        <item>电池电量</item>
+        <item>获取设备Mac</item>
+        <item>设备版本</item>
+        <item>重置MCU</item>
+        <item>设备震动次数</item>
+        <item>实时计步</item>
+        <item>设置目标</item>
+        <item>自动区间</item>
+        <item>闹钟</item>
+        <item>通知提醒</item>
+        <item>久坐提醒</item>
+        <item>获得计步总数据</item>
+        <item>获得步数详细数据</item>
+        <item>睡眠数据</item>
+        <item>心率历史数据</item>
+        <item>静态心率历史数据</item>
+        <item>Hrv数据</item>
+        <item>锻炼数据</item>
+        <item>运动模式</item>
+        <item>手动血氧数据</item>
+        <item>自动测试血氧数据</item>
+        <item>健康测量</item>
+        <item>血糖数据采集</item>
+        <item>Log</item>
+    </string-array>
+
+    <string-array name="weekarray">
+        <item>Sunday</item>
+        <item>Monday</item>
+        <item>Tuesday</item>
+        <item>Wednesday</item>
+        <item>Thursday</item>
+        <item>Friday</item>
+        <item>Saturday</item>
+    </string-array>
+
+    <string-array name="nofityarray">
+        <item>Tel</item>
+        <item>Sms</item>
+        <item>Wechat</item>
+        <item>Facebook</item>
+        <item>Instagram</item>
+        <item>Skype</item>
+        <item>Telegram</item>
+        <item>Twitter</item>
+        <item>vkclient</item>
+        <item>WhatApp</item>
+        <item>QQ</item>
+        <item>In</item>
+        <item>Stop_Tel</item>
+    </string-array>
+
+    <string-array name="sport">
+        <item>Run</item>
+        <item>Cycling</item>
+        <item>Badminton</item>
+        <item>Football</item>
+        <item>Tennis</item>
+        <item>Yoga</item>
+        <item>Dance</item>
+        <item>Basketball</item>
+        <item>Hiking</item>
+        <item>Gym</item>
+    </string-array>
+    <string-array name="week">
+        <item>Sun</item>
+        <item>Mon</item>
+        <item>Tue</item>
+        <item>Wed</item>
+        <item>Thu</item>
+        <item>Fri</item>
+        <item>Sat</item>
+    </string-array>
+    <string-array name="mode_name">
+        <item>跑步</item>
+        <item>骑车</item>
+        <item>羽毛球</item>
+        <item>足球</item>
+        <item>网球</item>
+        <item>瑜伽</item>
+        <item>冥想</item>
+        <item>跳舞</item>
+        <item>篮球</item>
+        <item>步行</item>
+        <item>训练</item>
+        <item>板球</item>
+        <item>郊游野游</item>
+        <item>有氧运动</item>
+        <item>乒乓球</item>
+        <item>跳绳</item>
+        <item>仰卧起坐</item>
+        <item>排球</item>
+    </string-array>
+
+</resources>

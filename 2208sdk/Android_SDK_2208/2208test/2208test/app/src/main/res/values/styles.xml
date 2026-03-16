@@ -1,0 +1,35 @@
+<resources>
+
+    <!-- Base application theme. -->
+    <style name="AppTheme" parent="Theme.AppCompat.Light.DarkActionBar">
+        <!-- Customize your theme here. -->
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorAccent">@color/colorAccent</item>
+        <item name="android:textAllCaps">false</item>
+    </style>
+
+    <style name="AppThemeer" parent="Theme.AppCompat.Light.NoActionBar">
+        <!-- Customize your theme here. -->
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorAccent">@color/colorAccent</item>
+        <item name="android:textAllCaps">false</item>
+    </style>
+    <style name="alertdialog_week" parent="Base.V7.Theme.AppCompat.Dialog">
+
+        <!-- 宽度 -->
+        <item name="android:windowMinWidthMajor">@dimen/abc_dialog_min_width_major</item>
+        <item name="android:windowMinWidthMinor">@dimen/abc_dialog_min_width_minor</item>
+        <item name="textColorAlertDialogListItem">#171817</item>
+
+
+        <item name="android:listChoiceIndicatorMultiple">@drawable/check_remind_osd</item>
+
+
+
+        <!--<item name="colorAccent">#FFC107</item>--><!--progressdialog进度条颜色-->
+        <item name="android:background">@drawable/bg_ota</item><!--背景颜色会覆盖colorBackground-->
+    </style>
+
+</resources>

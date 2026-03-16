@@ -1,0 +1,60 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:orientation="vertical"
+    android:focusable="true"
+    android:focusableInTouchMode="true"
+    android:layout_height="match_parent"
+    tools:context="com.jstyle.test2208.activity.AlarmSetActivity">
+
+    <Button
+        android:layout_width="match_parent"
+        android:id="@+id/bt_clock_save"
+        android:text="Save"
+        android:layout_height="wrap_content" />
+    <android.support.v7.widget.SwitchCompat
+        android:layout_width="wrap_content"
+        android:layout_gravity="center"
+        android:id="@+id/SwitchCompat"
+        android:layout_height="wrap_content"/>
+    <TimePicker
+        android:id="@+id/timePicker_clock_set"
+        android:timePickerMode="spinner"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"></TimePicker>
+
+    <RadioGroup
+        android:id="@+id/radioGroup_gender"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:orientation="horizontal" >
+
+
+
+        <RadioButton
+            android:id="@+id/radio_normal"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Normal" />
+        <RadioButton
+            android:id="@+id/radio_Medicine"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:checked="true"
+            android:text="Medicine" />
+
+        <RadioButton
+            android:id="@+id/radio_Drink"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Drink" />
+    </RadioGroup>
+
+    <android.support.v7.widget.RecyclerView
+        android:layout_width="match_parent"
+        android:id="@+id/RecyclerView_alarm_set"
+        android:layout_height="wrap_content"></android.support.v7.widget.RecyclerView>
+
+</LinearLayout>
